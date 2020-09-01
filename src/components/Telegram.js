@@ -11,7 +11,7 @@ class Telegram extends Component {
         };
     }
     componentWillMount() {
-        // document.title = "Eksicode.org - Telegram Grupları";
+        document.title = "Eksicode.org - Telegram Grupları";
         fetch("https://api.eksicode.org/telegrams?_sort=ListOrder:ASC")
             .then(res => res.json())
             .then(list => this.setState({ groups: list }))

@@ -11,9 +11,9 @@ class Main extends Component {
     // });
     // instance.next();
     // instance.prev();
+    document.title = "Eksicode";
   }
   render() {
-    // document.title = "Eksicode";
     return (
       <div>
         <div className="section">

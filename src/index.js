@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 server
   .listen(PORT, () => {
-    console.log(`🚀 started in localhost:${PORT}`);
+    console.log(`🚀 started in http://localhost:${PORT}`);
   })
   .on('error', error => {
     console.log(error);

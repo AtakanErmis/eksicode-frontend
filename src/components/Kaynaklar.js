@@ -18,7 +18,7 @@ class Kaynaklar extends Component {
         this.fetchPageCountDebounced = debounce(this.fetchPageCount, 250)
     }
     componentWillMount() {
-        // document.title = "Eksicode.org - Kaynaklar";
+        document.title = "Eksicode.org - Kaynaklar";
         this.fetchKaynakData();
         this.fetchTelegramChannels();
         this.fetchPageCount();
