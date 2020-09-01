@@ -13,6 +13,7 @@ class Footer extends Component {
                                 href="https://github.com/Eksicode"
                                 rel="noopener noreferrer"
                                 target="_blank"
+                                aria-label="Github"
                             >
                                 <i className="logos-footer devicon-github-plain" />
                             </a>
@@ -21,6 +22,7 @@ class Footer extends Component {
                                 href="https://twitter.com/eksicode"
                                 rel="noopener noreferrer"
                                 target="_blank"
+                                aria-label="Twitter"
                             >
                                 <i className="logos-footer devicon-twitter-plain" />
                             </a>
@@ -30,12 +32,12 @@ class Footer extends Component {
                 <div className="footer-copyright">
                     <div className="container center-align">
                         2017 - 2020 eksicode.org |{" "}
-                        <Link className="blue-text text-darken-4" to="/gizlilik-politikasi">
+                        <Link className="" to="/gizlilik-politikasi">
                             Gizlilik Politikası
                         </Link>
                     </div>
                 </div>
-            </footer>
+            </footer >
         );
     }
 }

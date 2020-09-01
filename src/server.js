@@ -2,6 +2,7 @@ import App from './App';
 import React from 'react';
 import { StaticRouter } from 'react-router-dom';
 import express from 'express';
+import compression from 'compression'
 import { renderToString } from 'react-dom/server';
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
@@ -10,6 +11,7 @@ const server = express();
 server
   .disable('x-powered-by')
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
+  .use(compression())
   .get('/*', (req, res) => {
     const context = {};
     const markup = renderToString(
@@ -23,9 +25,19 @@ server
     } else {
       res.status(200).send(
         `<!doctype html>
-    <html lang="">
+    <html lang="tr">
     <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143778720-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-143778720-1');
+        </script>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="theme-color" content="#82bd4e" />
+        <meta name="description" content="Yazılımcı geliştirme platformu ekşiCode, yazılımcıların serüveninde onları yalnız bırakmaz, arkasında durur.">
         <meta charset="utf-8" />
         <title>Ekşicode</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,11 +56,15 @@ server
             rel="stylesheet"
         />
         <link
-            href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700"
-            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap"
+            rel="preload"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
         />
         <link
-            rel="stylesheet"
+            rel="preload"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
             href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css"
         />
         ${
