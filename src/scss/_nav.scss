@@ -1,0 +1,28 @@
+nav {
+  font-weight: 500; 
+  font-size: 0.875rem;
+  letter-spacing: .5px;
+  background-color: var(--night);
+  ul {
+    .mobile {
+      display: none;
+    }
+    li {
+      a {
+        font-size: 0.875rem;
+      }
+    }
+  }
+  @media only screen and (max-width: 1300px) {
+    .desktop {
+      display: none;
+    }
+    .mobile {
+      display: block !important;
+    }
+  }
+}
+.logo {
+  margin-top: 1.2rem;
+  height: 2rem;
+}

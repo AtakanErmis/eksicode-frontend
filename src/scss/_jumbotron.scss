@@ -1,0 +1,22 @@
+.jumbotron {
+   // margin-top:-2.8em;
+    background: var(--night);
+    padding:2em 0;
+    min-height:100vh;
+    background-size: cover !important;
+
+    &:before{
+      -webkit-filter: blur(10px) grayscale(0.4);
+      filter: blur(10px) grayscale(0.4);
+    }
+
+    h1,h2,h3,h4,a{
+        color: white;
+        font-weight: bold;
+    }
+    p {
+        color: white;
+        font-size: 1.5rem;
+        margin: 2rem 0 4rem 0;
+    }
+}
